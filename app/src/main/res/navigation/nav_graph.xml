@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/NaverMapFragment">
+
+    <fragment
+        android:id="@+id/NaverMapFragment"
+        android:name="jsy.vehicle.evcharginghelper.ui.fragment.NaverMapFragment"
+        android:label="@string/naver_map_fragment"
+        tools:layout="@layout/fragment_naver_map">
+
+        <action
+            android:id="@+id/action_naver_map_to_saved_path"
+            app:destination="@id/SavedPathFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SavedPathFragment"
+        android:name="jsy.vehicle.evcharginghelper.ui.fragment.SavedPathFragment"
+        android:label="@string/saved_path_fragment"
+        tools:layout="@layout/fragment_saved_path">
+
+        <action
+            android:id="@+id/action_saved_path_to_naver_map"
+            app:destination="@id/NaverMapFragment" />
+    </fragment>
+</navigation>

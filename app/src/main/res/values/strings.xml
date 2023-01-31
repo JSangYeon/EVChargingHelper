@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">전기차 충전소 도우미</string>
+
+    <string name="naver_map_fragment">naverMapFragment</string>
+    <string name="saved_path_fragment">savedPathFragment</string>
+
+
+    <string name="move_camera_mokdong">목동으로 화면이동</string>
+    <string name="get_all_place">저장된 모든 장소 확인</string>
+    
+    <string name="move_saved_path_fragment">저장된 경로 Fragment로 이동</string>
+    <string name="move_naver_map_fragment">NaverMapFragment로 이동</string>
+
+    <string name="path_departure_place_name">시작지명</string>
+    <string name="path_destination_place_name">목적지명</string>
+
+    <string name="channel_name">00000001</string>
+    <string name="channel_description">NotificationSample</string>
+
+    <string name="hint_app_close">뒤로가기키를 2초 내에 한번 더 누르시면 앱이 종료됩니다.</string>
+
+</resources>

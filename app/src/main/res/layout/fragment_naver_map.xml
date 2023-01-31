@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="naverMapFragment"
+            type="jsy.vehicle.evcharginghelper.ui.fragment.NaverMapFragment" />
+
+        <variable
+            name="naverMapViewModel"
+            type="jsy.vehicle.evcharginghelper.viewmodels.NaverMapViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.NaverMapFragment">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fc_naver_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:name="com.naver.maps.map.MapFragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        <Button
+            android:id="@+id/btn_get_all_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/get_all_place"
+            android:onClick="@{()->naverMapViewModel.getAllPlace()}"
+            app:layout_constraintBottom_toTopOf="@id/btn_move_camera_mokdong"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/btn_move_camera_mokdong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/move_camera_mokdong"
+            android:onClick="@{()->naverMapViewModel.setLocationMokdong()}"
+            app:layout_constraintBottom_toTopOf="@id/btn_navigate_second"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/btn_navigate_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/move_saved_path_fragment"
+            android:onClick="@{naverMapViewModel::navigateSecondFragment}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/circularProgressBar"
+            android:visibility="@{naverMapViewModel.isProgress() ? View.VISIBLE : View.GONE}"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cpb_background_progressbar_color="#b6bbd8"
+            app:cpb_background_progressbar_width="5dp"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="#3f51b5"
+            app:cpb_progressbar_width="7dp"
+            app:cpb_indeterminate_mode="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            app:cpb_progress_max="200"
+            app:cpb_round_border="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!--            android:onClick="@{()-> naverMapViewModel.navigateSecondFragment()}"-->
+        <!--        android:onClick="@{naverMapViewModel::navigateSecondFragment}"-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
