@@ -35,14 +35,10 @@ class SavedPathFragment : BaseFragment<FragmentSavedPathBinding>(R.layout.fragme
             _naverMapViewModel.setRouteByRouteHistory(routeHistory)
         }
 
-
-
         binding.rvPath.adapter = adapter
         _savedPathViewmodel.pathList.observe(viewLifecycleOwner) { pathList ->
-            adapter.replaceAll(pathList.toList())
-//            adapter.notifyDataSetChanged()
+            adapter.replaceAll(pathList.toList()) //pathList 데이터 연결하는 위치
         }
-
 
     }
 }
