@@ -13,6 +13,9 @@ import jsy.vehicle.evcharginghelper.databinding.ActivityMainBinding
 import jsy.vehicle.evcharginghelper.util.common.dpToPixel
 import jsy.vehicle.evcharginghelper.util.common.pixelToDp
 import jsy.vehicle.evcharginghelper.viewmodels.MainViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
@@ -24,6 +27,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         Log.d(logTag, "startActivity");
         Log.d(logTag, "100dp to pixels : ${100.dpToPixel()}")
         Log.d(logTag, "100pixels to dp : ${100.pixelToDp()}")
+
 
 //        _mainViewModel.mainText.observe(lifecycleOwner) { text ->
 //                binding.tvMain.text = text

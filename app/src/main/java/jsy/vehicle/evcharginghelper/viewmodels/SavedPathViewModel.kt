@@ -10,11 +10,14 @@ import jsy.vehicle.evcharginghelper.base.BaseViewModel
 import jsy.vehicle.evcharginghelper.base.SingleLiveEvent
 import jsy.vehicle.evcharginghelper.model.repository.LocalRepository
 import jsy.vehicle.evcharginghelper.model.database.entity.RouteHistory
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
 @HiltViewModel
-class SavedPathViewmodel @Inject constructor(
+class SavedPathViewModel @Inject constructor(
     private val localRepository: LocalRepository
 ) : BaseViewModel() {
 
@@ -31,21 +34,17 @@ class SavedPathViewmodel @Inject constructor(
         Navigation.findNavController(view).navigate(R.id.action_saved_path_to_naver_map)
     }
 
-    fun getAllPlace() {
-        disposables.clear()
-        localRepository.getPathListHistory().subscribe(
-            { pathList ->
+    private fun getAllPlace() {
+        CoroutineScope(Dispatchers.IO).launch {
+            localRepository.getPathListHistory().let  { pathList ->
                 Log.d(logTag, "getPlaceSize : ${pathList.size}")
                 pathList.forEach { path->
                     Log.d(logTag, "getPlace : ${path}")
                 }
                 _pathList.postValue(pathList)
-            },{
-                Log.d(logTag, "getAllPlace error : $it")
             }
-        ).let {
-          disposables.add(it)
-        };
+        }
+
     }
 
 

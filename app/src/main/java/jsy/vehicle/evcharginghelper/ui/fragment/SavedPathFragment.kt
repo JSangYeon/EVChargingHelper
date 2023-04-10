@@ -10,7 +10,7 @@ import jsy.vehicle.evcharginghelper.base.BaseFragment
 import jsy.vehicle.evcharginghelper.databinding.FragmentSavedPathBinding
 import jsy.vehicle.evcharginghelper.ui.recycler.view.saved.SavedRecyclerViewAdapter
 import jsy.vehicle.evcharginghelper.viewmodels.NaverMapViewModel
-import jsy.vehicle.evcharginghelper.viewmodels.SavedPathViewmodel
+import jsy.vehicle.evcharginghelper.viewmodels.SavedPathViewModel
 
 
 /**
@@ -20,23 +20,23 @@ import jsy.vehicle.evcharginghelper.viewmodels.SavedPathViewmodel
 @AndroidEntryPoint
 class SavedPathFragment : BaseFragment<FragmentSavedPathBinding>(R.layout.fragment_saved_path) {
 
-    val _savedPathViewmodel: SavedPathViewmodel by viewModels()
+    val _savedPathViewModel: SavedPathViewModel by viewModels()
     private val _naverMapViewModel: NaverMapViewModel by activityViewModels()
 
     override fun FragmentSavedPathBinding.init() {
         Log.d(logTag, "init SavedPathFragment")
 
         binding.savedPathFragment = this@SavedPathFragment
-        binding.savedPathViewModel = _savedPathViewmodel
+        binding.savedPathViewModel = _savedPathViewModel
 
         val adapter = SavedRecyclerViewAdapter { routeHistory ->
             Log.d(logTag, "adapterCallback $routeHistory")
-            _savedPathViewmodel.navigateNaverMapFragment(binding.root)
+            _savedPathViewModel.navigateNaverMapFragment(binding.root)
             _naverMapViewModel.setRouteByRouteHistory(routeHistory)
         }
 
         binding.rvPath.adapter = adapter
-        _savedPathViewmodel.pathList.observe(viewLifecycleOwner) { pathList ->
+        _savedPathViewModel.pathList.observe(viewLifecycleOwner) { pathList ->
             adapter.replaceAll(pathList.toList()) //pathList 데이터 연결하는 위치
         }
 

@@ -13,7 +13,7 @@
 
         <variable
             name="savedPathViewModel"
-            type="jsy.vehicle.evcharginghelper.viewmodels.SavedPathViewmodel" />
+            type="jsy.vehicle.evcharginghelper.viewmodels.SavedPathViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
