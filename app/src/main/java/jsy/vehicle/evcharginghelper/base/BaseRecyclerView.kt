@@ -22,10 +22,8 @@ abstract class BaseRecyclerView {
 
         protected val logTag = javaClass.simpleName
         private val items = mutableListOf<ITEM>()
-
-
         @SuppressLint("NotifyDataSetChanged")
-        fun replaceAll(items: List<ITEM>?) {
+        fun replaceAll(items: List<ITEM>?) { // 데이터 set하는 위치
             Log.d(logTag, "items : ${items?.size}")
             items?.let {
                 this.items.run {
@@ -64,7 +62,7 @@ abstract class BaseRecyclerView {
         open fun onBindViewHolder(item: Any?) {
             try {
                 bindingVariableId?.let {
-                    binding.setVariable(it, item)
+                    binding.setVariable(it, item) // xml의 variable data에 item을 연동
 
                 }
             } catch (e: Exception) {
