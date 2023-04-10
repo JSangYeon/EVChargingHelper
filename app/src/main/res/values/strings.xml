@@ -19,4 +19,7 @@
 
     <string name="hint_app_close">뒤로가기키를 2초 내에 한번 더 누르시면 앱이 종료됩니다.</string>
 
+    <string name="home">Home</string>
+    <string name="menu">Menu</string>
+
 </resources>

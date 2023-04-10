@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mainActivity"
+            type="jsy.vehicle.evcharginghelper.ui.activity.MainActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+<!--dataBinding button-->
+<!--        android:onClick="@{mainViewModel::bottomSheetItemClick}"-->
+
+        <TextView
+            android:id="@+id/tv_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home"
+            android:textColor="@color/white"
+            android:background="@color/black"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:padding="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:drawableStartCompat="@drawable/baseline_home_white_24" />
+
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/tv_home"
+            app:layout_constraintEnd_toStartOf="@+id/tv_drawer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:id="@+id/linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_close1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ccccc"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:padding="6dp"
+                    app:drawableStartCompat="@drawable/baseline_home_white_24" />
+
+                <TextView
+                    android:id="@+id/btn_close2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="aaaaa"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:padding="6dp"
+                    app:drawableStartCompat="@drawable/baseline_home_white_24" />
+                <TextView
+                    android:id="@+id/btn_close3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ccccc"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:padding="6dp"
+                    app:drawableStartCompat="@drawable/baseline_home_white_24" />
+
+                <TextView
+                    android:id="@+id/btn_close4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="aaaaa"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:padding="6dp"
+                    app:drawableStartCompat="@drawable/baseline_home_white_24" />
+
+                <TextView
+                    android:id="@+id/btn_close5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ccccc"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:padding="6dp"
+                    app:drawableStartCompat="@drawable/baseline_home_white_24" />
+
+                <TextView
+                    android:id="@+id/btn_close6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="aaaaa"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:padding="6dp"
+                    app:drawableStartCompat="@drawable/baseline_home_white_24" />
+
+
+                <!-- Add 8 more TextViews -->
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tv_drawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu"
+            android:textColor="@color/white"
+            android:background="@color/black"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:padding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:drawableStartCompat="@drawable/baseline_menu_white_24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,5 +1,8 @@
 package jsy.vehicle.evcharginghelper.viewmodels
 
+import android.util.Log
+import android.view.View
+import android.widget.TextView
 import androidx.lifecycle.LiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jsy.vehicle.evcharginghelper.base.BaseViewModel
@@ -14,9 +17,18 @@ class MainViewModel @Inject constructor(
     val mainText: LiveData<String>
         get() = _mainText
 
+
+    private val _clickedIndex = SingleLiveEvent<Int>()
+    val clickedIndex: LiveData<Int>
+        get() = _clickedIndex
+
+
     init {
         _mainText.value = "1234"
     }
+
+
+
 
     fun changeMainText() {
 
