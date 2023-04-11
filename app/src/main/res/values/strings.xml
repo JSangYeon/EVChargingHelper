@@ -7,7 +7,7 @@
 
     <string name="move_camera_mokdong">목동으로 화면이동</string>
     <string name="get_all_place">저장된 모든 장소 확인</string>
-    
+
     <string name="move_saved_path_fragment">저장된 경로 Fragment로 이동</string>
     <string name="move_naver_map_fragment">NaverMapFragment로 이동</string>
 
@@ -19,7 +19,10 @@
 
     <string name="hint_app_close">뒤로가기키를 2초 내에 한번 더 누르시면 앱이 종료됩니다.</string>
 
+    <string name="search">검색</string>
+
     <string name="home">Home</string>
     <string name="menu">Menu</string>
+    <string name="saved_path">저장된 경로</string>
 
 </resources>

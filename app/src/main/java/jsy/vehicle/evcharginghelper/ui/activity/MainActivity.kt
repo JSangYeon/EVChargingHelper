@@ -3,7 +3,6 @@ package jsy.vehicle.evcharginghelper.ui.activity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.core.view.GravityCompat
@@ -40,6 +39,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 //        binding.btnTextChange.setOnClickListener{
 //            _mainViewModel.changeMainText()
 //        }
+        setDrawer(binding.drawerLayout, binding.navgationView,  R.id.nav_home )
         initBottomSheet()
 
         this.onBackPressedDispatcher.addCallback(this, callback)
@@ -90,18 +90,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private fun bottomSheetItemClick(textView: TextView) {
 
         when (textView) {
-            binding.viewBottomSheet.tvHome -> Toast.makeText(
-                this@MainActivity,
-                "Home 버튼 클릭",
-                Toast.LENGTH_SHORT
-            ).show()
+            binding.viewBottomSheet.tvHome -> {
+                val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+                val currentFragmentId = navController.currentDestination?.id
+
+                if (currentFragmentId!=null && currentFragmentId != R.id.naver_map_fragment)
+                {
+                    Navigation.findNavController(this, R.id.nav_host_fragment)
+                        .navigate(R.id.action_saved_path_to_naver_map)
+                }
+            }
             binding.viewBottomSheet.btnClose1 -> {
                 val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
                 val currentFragmentId = navController.currentDestination?.id
 
-                Log.d("현재 목적지 ID", "currentDestinationId : ${currentFragmentId}")
-                Log.d("뷰 리소스 아이디", "currentDestinationId : ${R.id.SavedPathFragment}")
-                if (currentFragmentId!=null && currentFragmentId != R.id.SavedPathFragment)
+                if (currentFragmentId!=null && currentFragmentId != R.id.saved_path_fragment)
                 {
                     Navigation.findNavController(this, R.id.nav_host_fragment)
                         .navigate(R.id.action_naver_map_to_saved_path)

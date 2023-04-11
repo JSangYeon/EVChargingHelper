@@ -31,16 +31,36 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
-        <Button
-            android:id="@+id/btn_get_all_place"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/get_all_place"
-            android:onClick="@{()->naverMapViewModel.getAllPlace()}"
-            app:layout_constraintBottom_toTopOf="@id/btn_move_camera_mokdong"
-            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:minHeight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:background="@drawable/border_box"
+            android:textColor="@color/black"
+            android:hint="@string/search"
+            android:textColorHint="@color/darker_gray"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_get_all_place"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="18dp"-->
+<!--            android:layout_marginBottom="30dp"-->
+<!--            android:text="@string/get_all_place"-->
+<!--            android:onClick="@{()->naverMapViewModel.getAllPlace()}"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/btn_move_camera_mokdong"-->
+<!--            app:layout_constraintEnd_toEndOf="parent" />-->
 
         <Button
             android:id="@+id/btn_move_camera_mokdong"
@@ -48,21 +68,13 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/darker_gray"
             android:text="@string/move_camera_mokdong"
+            android:textColor="@color/white"
             android:onClick="@{()->naverMapViewModel.setLocationMokdong()}"
-            app:layout_constraintBottom_toTopOf="@id/btn_navigate_second"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <Button
-            android:id="@+id/btn_navigate_second"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/move_saved_path_fragment"
-            android:onClick="@{naverMapViewModel::navigateSecondFragment}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
 
         <com.mikhaellopez.circularprogressbar.CircularProgressBar
             android:id="@+id/circularProgressBar"

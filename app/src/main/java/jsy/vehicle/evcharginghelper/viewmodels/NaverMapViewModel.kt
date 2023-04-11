@@ -42,9 +42,9 @@ class NaverMapViewModel @Inject constructor(
     val currentLocation: LiveData<LatLng> = _currentLocation
 
 
-    fun navigateSecondFragment(view: View) {
-        Navigation.findNavController(view).navigate(R.id.action_naver_map_to_saved_path)
-    }
+//    fun navigateSecondFragment(view: View) {
+//        Navigation.findNavController(view).navigate(R.id.action_naver_map_to_saved_path)
+//    }
 
     fun getEVCS() {
 
@@ -148,26 +148,10 @@ class NaverMapViewModel @Inject constructor(
         _currentLocation.value = LatLng(37.5261, 126.8643)
     }
 
-    fun getAllPlace() {
-
-//        private fun initNoti(){
-        val sampleNotificationUtils = SampleNotificationUtils()
-        sampleNotificationUtils.useNoti()
-//        }
-//        var a = ""
-//        val temp = localRepository.getPathListHistory().subscribe(
-//            { placeList ->
-//                Log.d(logTag, "getPlaceSize : ${placeList.size}")
-//                placeList.forEach { place->
+//    fun getAllPlace() {
 //
-//                    Log.d(logTag, "getPlace : ${place}")
+//        val sampleNotificationUtils = SampleNotificationUtils()
+//        sampleNotificationUtils.useNoti()
 //
-//                    a = place.destinationName
-//                }
-//            },{
-//
-//                Log.d(logTag, "getAllPlace error : $it")
-//            }
-//        );
-    }
+//    }
 }

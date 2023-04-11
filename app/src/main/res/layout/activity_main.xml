@@ -49,13 +49,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- 네비게이션 드로어 영역 -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/navigation_view"
-            android:layout_width="240dp"
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navgation_view"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
             android:layout_gravity="start"
-            android:background="@android:color/white"
-            android:scrollbars="vertical" />
+            app:menu="@menu/drawer_menu"
+            app:itemTextColor="@color/black"
+            android:background="@color/white"
+            />
 
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>
